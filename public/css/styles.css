@@ -4,3 +4,125 @@
 *:after {
   box-sizing: border-box;
 }
+/* HEADER */
+#top-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+#top-header .siteName {
+  display: flex;
+  justify-content: left;
+  font-size: 1.5rem;
+}
+.siteName a, #tools a {
+  text-decoration: none;
+  color: #212529;
+}
+#top-header #tools {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+
+/* NAV */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 2rem auto;
+  padding: 0;
+  justify-content: center;
+  background-color: #212529;
+}
+nav li {
+  padding: 1rem;
+  color: #F8F9FA;
+}
+
+/* INDEX */
+#title {
+  font-size: 1.5rem;
+}
+#img-banner {max-width: 100%;}
+#hero {position: relative;}
+#call-to-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(33, 37, 41, .8 );
+  position: absolute;
+  float: left;
+  top: 2rem;
+  left: .5rem;
+  padding: .7rem;
+  color: white;
+}
+#call-to-action h1 {
+  font-size: 1rem;
+  margin: 0 0 .3rem 0;
+}
+#call-to-action ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+#call-to-action li {
+  margin: .1rem 0;
+}
+#call-to-action a {
+  text-decoration: none;
+  background-color: yellow;
+  color: #212529;
+  padding: .3rem .8rem;
+}
+
+/* REVIEWS */
+#reviews {margin-top: 4rem;}
+#reviews h1 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+#reviews li {
+  margin: .4rem 0;
+}
+
+/* UPGRADES */
+#upgrades {margin-top: 4rem;}
+#upgrades h1 {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+#upgrades .container-upgrades {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 1rem;
+}
+#upgrades .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#upgrades .box .img-container {
+  background-color: #212529;
+  padding: 1rem;
+}
+#upgrades .box > a {
+  margin: .2rem 0 1rem 0;
+  padding: .1rem .5rem;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid black;
+  border-radius: 20px;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #212529;
+  color: #F8F9FA;
+  margin-top: 5rem;
+}
