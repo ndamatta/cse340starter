@@ -25,6 +25,11 @@
   color: #F8F9FA;
   padding: .1rem .5rem;
   border-radius: 10px;
+  transition: transform .2s;
+}
+#tools a:hover {
+  color: yellow;
+  transform: scale(1.03);
 }
 #top-header #tools {
   display: flex;
@@ -64,6 +69,11 @@ nav li {
   padding: 1rem .3rem;
   margin: 0 1rem;
   color: #F8F9FA;
+  transition: transform .2s;
+}
+nav li:hover {
+  color: yellow;
+  transform: scale(1.03);
 }
 
 /* INDEX */
@@ -106,7 +116,9 @@ nav li {
   background-color: yellow;
   color: #212529;
   padding: .3rem .8rem;
+  transition: transform .2s;
 }
+#call-to-action a:hover {transform: scale(1.03);}
 
 /* REVIEWS */
 #reviews {margin-top: 4rem;}
