@@ -4,6 +4,7 @@
 *:after {
   box-sizing: border-box;
 }
+* {font-family: Inter;}
 /* HEADER */
 #top-header {
   display: grid;
