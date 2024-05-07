@@ -1,10 +1,6 @@
-/* ******************************************
- * This server.js file is the primary file of the 
- * application. It is used to control the project.
- *******************************************/
-/* ***********************
- * Require Statements
- *************************/
+//Main file, controlling the app
+
+//Requires
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
@@ -23,16 +19,22 @@ app.use('/inv', inventoryRoute)
 //Index route
 app.get('/', baseController.buildHome)
 
-/* ***********************
- * Local Server Information
- * Values from .env (environment) file
- *************************/
+//Local server info (.env)
 const port = process.env.PORT
 const host = process.env.HOST
 
-/* ***********************
- * Log statement to confirm server operation
- *************************/
+//Express error handler
+app.use(async (err, req, res, next) => {
+  let nav = await utilities.getNav()
+  console.error(`Error at: ${req,originalUrl}: ${err.message}`)
+  res.render('errors/error', {
+    title: err.status || 'Server Error',
+    message: err.message,
+    nav
+  })
+})
+
+//Log statement, confirming server operation
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
