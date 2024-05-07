@@ -20,16 +20,20 @@ app.use('/inv', inventoryRoute)
 //Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
-
-app.use(async (req, res, next) => {
-  next({status: 404, message: 'Sorry, it seems like we lost this page :(.'})
-})
-
 //Local server info (.env)
 const port = process.env.PORT
 const host = process.env.HOST
 
+//Log statement, confirming server operation
+app.listen(port, () => {
+  console.log(`app listening on ${host}:${port}`)
+})
+
 //Express error handler
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, it seems like we lost this page :(.'})
+})
+
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
@@ -39,9 +43,4 @@ app.use(async (err, req, res, next) => {
     message,
     nav
   })
-})
-
-//Log statement, confirming server operation
-app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`)
 })
