@@ -49,6 +49,11 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+Util.buildDetailGrid = async function(data) {
+  let grid
+  grid = `<h1>Car make: ${data.inv_make}</h1>`
+  return grid
+}
 
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
