@@ -15,15 +15,15 @@ if (process.env.NODE_ENV == "development") {
     },
 })
 
-// Added for troubleshooting queries during development
+// Added for troubleshooting QUERIES during development
 module.exports = {
   async query(text, params) {
     try {
       const res = await pool.query(text, params)
-      console.log("executed query", { text })
+      console.log(`[OK] Executed query: ${text}`)
       return res
     } catch (error) {
-      console.error("error in query", { text })
+      console.error(`[ERROR] Executed query: ${text}`)
       throw error
     }
   },
