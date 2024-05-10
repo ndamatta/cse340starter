@@ -67,8 +67,10 @@ nav ul {
   background-color: #212529;
 }
 nav li {
-  padding: 1rem .3rem;
-  margin: 0 1rem;
+  padding: 1rem .1rem;
+  margin: 0 .7rem;
+  border-bottom: 2px solid yellow;
+  border-radius: 2px;
 }
 nav a {
   color: #F8F9FA;
@@ -177,7 +179,54 @@ footer {
   margin-top: 5rem;
 }
 
-@media screen and (min-width: 500px) {
+/* --------- INVENTORY --------- */
+#inv-title {
+  display: flex;
+  justify-content: center;
+}
+#inv-display {
+  display: grid;
+  grid-template-columns: 200px;
+  justify-content: center;
+  padding: 0;
+}
+#inv-display a img {
+  width: 100%;
+  border-radius: 15px;
+}
+#inv-display li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem 1rem;
+  border: 3px solid #212529;
+  border-radius: 10px;
+}
+.namePrice {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.namePrice > h2 {
+  font-size: 1rem;
+  text-align: center;
+}
+.namePrice a {
+  text-decoration: none;
+  color: #212529;
+}
+.namePrice span {
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: #212529;
+  color: yellow;
+  padding: .2rem .5rem;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 550px) {
   body {
     background-image: url('/images/site/checkerboard.jpg');
     margin: 3rem 2%;
@@ -209,5 +258,14 @@ footer {
     grid-column: 2;
     grid-row: 1;
   }
-
+  #inv-display {
+    grid-template-columns: 200px 200px;
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+@media screen and (min-width: 968px) {
+  #inv-display {
+    grid-template-columns: repeat(3, 200px);
+  }
 }
