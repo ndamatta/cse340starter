@@ -1,9 +1,9 @@
 <% if (title) { %>
-    <h1><%= title %></h1>
+    <h1 id='inv-title'><%= title %></h1>
     <% } else {
       res.redirect('/')
     } %>
 
 <%# messages() %>
 <%- grid %>
-
+<script src='/js/script.js'></script>
