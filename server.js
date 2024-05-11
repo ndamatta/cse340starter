@@ -31,7 +31,7 @@ app.listen(port, () => {
 
 //Express error handler
 app.use(async (req, res, next) => {
-  next({status: 404, message: 'Sorry, it seems like we lost this page :(.'})
+  next({status: 404, message: 'Sorry, it seems like we lost this page :('})
 })
 
 app.use(async (err, req, res, next) => {
