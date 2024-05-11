@@ -47,7 +47,19 @@ Util.buildClassificationGrid = async function(data){
 }
 Util.buildDetailGrid = async function(data) {
   let grid
-  grid = `<h1>Car make: ${data.inv_make}</h1>`
+  grid = `
+  <div id="det-display">
+    <div id="det-img">
+      <img src="${data.inv_image}" alt="Image of ${data.inv_make} ${data.inv_model}">
+    </div>
+    <div id="det-details">
+      <h2 id="det-subtitle">${data.inv_year} ${data.inv_make} ${data.inv_model} Details</h2>
+      <span id="det-mileage">Mileage: ${data.inv_miles.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+      <p id="det-description">Desription: ${data.inv_description}</p>
+      <span id="det-price">$${new Intl.NumberFormat('en-US').format(data.inv_price)}</span>
+    </div>
+  </div>
+  `
   return grid
 }
 
