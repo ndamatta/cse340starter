@@ -267,6 +267,10 @@ footer {
   margin-top: 3rem;
   text-align: center;
 }
+#error-link {
+  color: white;
+  font-size: .8rem;
+}
 @media screen and (min-width: 550px) {
   body {
     background-image: url('/images/site/checkerboard.jpg');
