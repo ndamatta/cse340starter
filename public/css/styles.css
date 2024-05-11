@@ -86,6 +86,8 @@ nav a:hover {
 /* INDEX */
 #title {
   font-size: 1.5rem;
+  margin: 3rem 0;
+  text-align: center;
 }
 #img-banner {
   display: flex;
@@ -181,8 +183,10 @@ footer {
 
 /* --------- INVENTORY --------- */
 #inv-title {
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
+  margin: 3rem 0;
 }
 #inv-display {
   display: grid;
@@ -219,13 +223,46 @@ footer {
 }
 .namePrice span {
   font-size: 1.1rem;
-  text-align: center;
-  background-color: #212529;
-  color: yellow;
   padding: .2rem .5rem;
-  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(33, 37, 41, .1);
+  color: black;
+  border-bottom: 2px solid #212529;
+  border-radius: 0 0 10px 10px;
 }
 
+/* --------- DETAIL --------- */
+#det-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+#det-img img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid #212529;
+}
+#det-subtitle {
+  font-size: 1.2rem;
+}
+#det-price, #det-mileage {
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(33, 37, 41, .1);
+  color: black;
+  padding: .3rem .7rem;
+  
+}
+#det-description {
+  margin: 2rem 0 1.5rem 0;
+  font-size: 1.1rem;
+}
+#det-price {
+  font-size: 1.3rem;
+  padding: .3rem 1rem;
+  border-bottom: 2px solid #212529;
+  border-radius: 0 0 10px 10px;
+}
 @media screen and (min-width: 550px) {
   body {
     background-image: url('/images/site/checkerboard.jpg');
