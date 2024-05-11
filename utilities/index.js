@@ -55,7 +55,8 @@ Util.buildDetailGrid = async function(data) {
     <div id="det-details">
       <h2 id="det-subtitle">${data.inv_year} ${data.inv_make} ${data.inv_model} Details</h2>
       <span id="det-mileage">Mileage: ${data.inv_miles.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-      <p id="det-description">Desription: ${data.inv_description}</p>
+      <span id="det-color">Color: ${data.inv_color.charAt(0).toUpperCase()}${data.inv_color.slice(1).toLowerCase()}</span>
+      <p id="det-description">Description: ${data.inv_description}</p>
       <span id="det-price">$${new Intl.NumberFormat('en-US').format(data.inv_price)}</span>
     </div>
   </div>
