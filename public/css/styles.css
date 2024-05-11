@@ -262,6 +262,11 @@ footer {
   border-bottom: 2px solid #212529;
   border-radius: 0 0 10px 10px;
 }
+/* ---------- ERROR ---------- */
+#error-title, #error-msg {
+  margin-top: 3rem;
+  text-align: center;
+}
 @media screen and (min-width: 550px) {
   body {
     background-image: url('/images/site/checkerboard.jpg');
