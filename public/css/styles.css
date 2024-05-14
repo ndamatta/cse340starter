@@ -101,6 +101,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   background-color: rgba(33, 37, 41, .8 );
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   position: absolute;
   float: left;
   top: 15%;
@@ -206,6 +207,7 @@ footer {
   margin: 1rem;
   padding: 1rem 1rem;
   border: 3px solid #212529;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 .namePrice {
@@ -241,6 +243,7 @@ footer {
   width: 100%;
   border-radius: 15px;
   border: 2px solid #212529;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 #det-subtitle {
   font-size: 1.2rem;
@@ -249,6 +252,7 @@ footer {
   text-align: center;
   margin: 10rem 0;
   background-color: rgba(33, 37, 41, .1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: black;
   padding: .2rem .7rem;
 }
