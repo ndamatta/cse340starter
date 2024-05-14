@@ -63,7 +63,21 @@ Util.buildDetailGrid = async function(data) {
   `
   return grid
 }
-
+Util.buildLogin = async function() {
+  let grid = `
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Don't have an account? Register here</a>
+  </div>
+  `
+  
+  return grid
+}
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 
