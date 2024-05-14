@@ -11,6 +11,7 @@ const pool = require("./database/")
 
 const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute")
 const baseController = require("./controllers/baseController")
 
 //Session
@@ -36,7 +37,8 @@ app.use(static)
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
-app.use('/inv', inventoryRoute)
+app.use("/inv", inventoryRoute)
+app.use("/account", accountRoute)
 //Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
