@@ -262,13 +262,13 @@ footer {
   border-bottom: 2px solid #212529;
   border-radius: 0 0 10px 10px;
 }
-/* ---------- LOGIN ---------- */
-#login-title {
+/* ---------- LOGIN / REGISTER ---------- */
+#login-title, #register-title {
   font-size: 1.5rem;
   text-align: center;
   margin: 3rem 0;
 }
-#login-display {
+#login-display, #register-display {
   background-color: #fff;
   padding: 1.5rem 1rem;
   border-radius: 5px;
@@ -276,18 +276,18 @@ footer {
   width: 85%;
   margin: 0 auto;
 }
-#login-display input {
+#login-display input, #register-display input {
   width: 100%;
   padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: .6rem;
 }
-#login-display form .login-label {
+#login-display form .login-label, #register-display form .login-label {
   font-size: .9rem;
   margin-left: .2rem;
 }
-#login-display button {
+#login-display button, #register-display button {
   width: 100%;
   padding: .6rem;
   background-color: #212529;
@@ -297,7 +297,7 @@ footer {
   cursor: pointer;
   margin-top: .6rem;
 }
-#login-display button:hover {
+#login-display button:hover, #register-display button:hover {
   color: yellow;
   border-bottom: 1px solid yellow;
   border-radius: 5px;
@@ -312,6 +312,21 @@ footer {
 }
 #login-display a:hover {
   text-decoration: underline;
+}
+#show-password {
+  display: flex;
+  font-size: .8rem;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: .6rem;
+  background-color: rgba(33, 37, 41, .1);
+  width: 120px;
+  padding: .2rem .2rem;
+  border-radius: 0 0 15px 15px;
+  border-bottom: 1px solid #212529;
+}
+#register-display #register-password {
+  margin-bottom: 0;
 }
 
 /* ---------- ERROR ---------- */
@@ -369,7 +384,7 @@ footer {
     column-gap: 2rem;
   }
   /* ---------- LOGIN ---------- */
-  #login-display {
+  #login-display, #register-display {
     width: 350px;
   }
 }
@@ -381,7 +396,7 @@ footer {
     grid-template-columns: 450px 1fr;
     column-gap: 5rem;
   }
-  #login-display {
+  #login-display, #register-display {
     width: 450px;
   }
 }
