@@ -65,12 +65,13 @@ Util.buildDetailGrid = async function(data) {
 }
 Util.buildLogin = async function() {
   let grid = `
-  <div class="login-container">
-    <h2>Login</h2>
+  <div id="login-display">
     <form>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
+      <label class="login-label">Email</label>
+      <input type="email" name="account_email" placeholder="email@example.com" required>
+      <label class="login-label">Password</label>
+      <input type="password" name="account_password" placeholder="Password" required>
+      <button type="submit">Login</button>
     </form>
     <a href="/register">Don't have an account? Register here</a>
   </div>
