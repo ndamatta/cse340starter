@@ -67,11 +67,13 @@ Util.buildLogin = async function() {
   let grid = `
   <div id="login-display">
   <form>
-    <label for="account_email" class="login-label">Email</label>
-    <input type="email" id="account_email" name="account_email" placeholder="email@example.com" required>
+    <label class="login-label">Email
+      <input type="email" name="account_email" placeholder="email@example.com" required>
+    </label>
     
-    <label for="account_password" class="login-label">Password</label>
-    <input type="password" id="account_password" name="account_password" placeholder="Password" required>
+    <label class="login-label">Password
+      <input type="password" name="account_password" placeholder="Password" required>
+    </label>
     
     <button type="submit">Login</button>
   </form>
