@@ -77,10 +77,14 @@ Util.buildLogin = async function() {
     
     <button type="submit">Login</button>
   </form>
-  <a href="/register">Don't have an account? Register here</a>
+  <a href="/account/register">Don't have an account? Register here</a>
   </div>
   `
   
+  return grid
+}
+Util.buildRegister = async function() {
+  let grid = `<h1>This is the registration</h1>`
   return grid
 }
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
