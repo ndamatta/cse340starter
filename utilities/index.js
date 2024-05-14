@@ -84,7 +84,30 @@ Util.buildLogin = async function() {
   return grid
 }
 Util.buildRegister = async function() {
-  let grid = `<h1>This is the registration</h1>`
+  let grid = `
+  <div id="register-display">
+    <form>
+      <label class="login-label">First name
+        <input type="text" name="first_name" required>
+      </label>
+      
+      <label class="login-label">Last name
+        <input type="text" name="last_name" required>
+      </label>
+
+      <label class="login-label">Email 
+        <input type="email" name="account_email" placeholder="email@example.com" required>
+      </label>
+
+      <label class="login-label">Password
+        <input type="password" name="account_password" id="register-password" required>
+      </label>
+      <span id="show-password">Show password</span>
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  `
   return grid
 }
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
