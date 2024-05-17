@@ -12,5 +12,18 @@
 <%  }) %>
  </ul>
 <% } %>
-<%- grid %>
+<div id="login-display">
+  <form id="loginForm" action="/account/login" method="post">
+    <label class="login-label">Email
+      <input type="email" name="account_email" placeholder="email@example.com" required>
+    </label>
+    
+    <label class="login-label">Password
+      <input type="password" name="account_password" placeholder="Password" required>
+    </label>
+    
+    <button type="submit">Login</button>
+  </form>
+  <a href="/account/register">Don't have an account? Register here</a>
+  </div>
 <script src='/js/script.js'></script>
