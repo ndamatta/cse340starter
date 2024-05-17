@@ -86,13 +86,13 @@ Util.buildLogin = async function() {
 Util.buildRegister = async function() {
   let grid = `
   <div id="register-display">
-    <form>
+    <form action="/account/register" method="post">
       <label class="login-label">First name
-        <input type="text" name="first_name" required>
+        <input type="text" name="account_firstname" required>
       </label>
       
       <label class="login-label">Last name
-        <input type="text" name="last_name" required>
+        <input type="text" name="account_lastname" required>
       </label>
 
       <label class="login-label">Email 
