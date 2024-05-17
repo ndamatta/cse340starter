@@ -8,6 +8,7 @@ const app = express()
 const utilities = require('./utilities/')
 const session = require("express-session")
 const pool = require("./database/")
+const bodyParser = require("body-parser")
 
 const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
@@ -31,6 +32,8 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 //Routes
 app.use(static)
