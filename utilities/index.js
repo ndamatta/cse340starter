@@ -63,54 +63,6 @@ Util.buildDetailGrid = async function(data) {
   `
   return grid
 }
-Util.buildLogin = async function() {
-  let grid = `
-  <div id="login-display">
-  <form>
-    <label class="login-label">Email
-      <input type="email" name="account_email" placeholder="email@example.com" required>
-    </label>
-    
-    <label class="login-label">Password
-      <input type="password" name="account_password" placeholder="Password" required>
-    </label>
-    
-    <button type="submit">Login</button>
-  </form>
-  <a href="/account/register">Don't have an account? Register here</a>
-  </div>
-  `
-  
-  return grid
-}
-Util.buildRegister = async function() {
-  let grid = `
-  <div id="register-display">
-    <form action="/account/register" method="post">
-      <label class="login-label">First name
-        <input type="text" name="account_firstname" required>
-      </label>
-      
-      <label class="login-label">Last name
-        <input type="text" name="account_lastname" required>
-      </label>
-
-      <label class="login-label">Email 
-        <input type="email" name="account_email" placeholder="email@example.com" required>
-      </label>
-
-      <label class="login-label">Password
-        <a href="#" id="password-advice" title="Must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character">?</a> 
-        <input type="password" name="account_password" id="register-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
-      </label>
-      <span id="show-password">Show password</span>
-      
-      <button type="submit">Register</button>
-    </form>
-  </div>
-  `
-  return grid
-}
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 
