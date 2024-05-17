@@ -356,7 +356,8 @@ footer {
   list-style-type: none;
   text-align: center;
   color: #212529;
-  padding: .5rem 0;
+  padding: .2rem 0;
+  margin: .5rem 0;
   border-right: 15px solid red;
   border-left: 15px solid red;
   border-radius: 15px;
