@@ -100,7 +100,8 @@ Util.buildRegister = async function() {
       </label>
 
       <label class="login-label">Password
-        <input type="password" name="account_password" id="register-password" required>
+        <a href="#" id="password-advice" title="Must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character">?</a> 
+        <input type="password" name="account_password" id="register-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
       </label>
       <span id="show-password">Show password</span>
       

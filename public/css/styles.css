@@ -332,6 +332,12 @@ footer {
 #register-display #register-password {
   margin-bottom: 0;
 }
+#password-advice {
+  background-color: #212529;
+  color: white;
+  border-radius: 50px;
+  padding: 0 .3rem;
+}
 
 /* ---------- ERROR ---------- */
 #error-title, #error-msg {

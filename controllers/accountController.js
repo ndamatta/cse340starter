@@ -10,6 +10,7 @@ accountController.buildLogin = async function (req, res, next) {
         title: "Login",
         nav,
         grid,
+        errors: null,
     });
 }
 accountController.buildRegistrer = async function (req, res, next) {
@@ -19,6 +20,7 @@ accountController.buildRegistrer = async function (req, res, next) {
       title: "Register",
       nav,
       grid,
+      errors: null,
     })
   }
 accountController.registerAccount = async function (req, res) {
