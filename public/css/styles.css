@@ -276,7 +276,6 @@ footer {
   background-color: #fff;
   padding: 1.5rem 1rem;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 85%;
   margin: 0 auto;
 }
@@ -338,6 +337,34 @@ footer {
   border-radius: 50px;
   padding: 0 .3rem;
 }
+
+/* ---------- INVENTORY MAGAGEMENT ---------- */
+#manag-title {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+#manag-display {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 3rem auto;
+
+}
+#manag-display a {
+  margin: 2rem auto;
+  padding: .2rem;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  background-color: #212529;
+  border-radius: 15px;
+  color: white;
+  width: 120px;
+}
+#manag-display a:hover {color: yellow;}
 
 /* ---------- ERROR ---------- */
 #error-title, #error-msg {
