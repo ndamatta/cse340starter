@@ -32,11 +32,9 @@ invCont.buildByInventoryId = async function(req, res, next) {
 
 invCont.buildInvManagement = async function (req, res, next) {
     let nav = await utilities.getNav()
-    const grid = await utilities.buildManagementGrid()
     res.render('./inventory/management', {
         title: "Inventory Management",
         nav,
-        grid,
     })
 }
 
@@ -57,8 +55,8 @@ invCont.addClassification = async function (req, res, next) {
     if (classificationResult) {
         let nav = await utilities.getNav()
         req.flash(
-          "notice",
-          `Congratulations, you added the classification: ${classification_name}.`
+          "success",
+          `You added the classification: ${classification_name}.`
         )
         res.status(201).render("./inventory/add-classification", {
           title: "Add Classification",
@@ -73,5 +71,45 @@ invCont.addClassification = async function (req, res, next) {
           errors: null,
         })
       }
+}
+
+invCont.buildAddInventory = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  let classificationList = await utilities.buildClassificationList();
+  res.render('./inventory/add-inventory', {
+      title: "Add Inventory",
+      nav,
+      classificationList,
+      errors: null,
+  })
+}
+
+invCont.addInventory = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  const {classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color} = req.body
+  const inventoryResult = await invModel.addInventory(classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color)
+
+  if (inventoryResult) {
+    let classificationList = await utilities.buildClassificationList();
+      req.flash(
+        "success",
+        `You added the vehicle: ${inv_make} ${inv_model} to the inventory`
+      )
+      res.status(201).render("./inventory/add-inventory", {
+        title: "Add to Inventory",
+        nav,
+        classificationList,
+        errors: null,
+      })
+    } else {
+      let classificationList = await utilities.buildClassificationList();
+      req.flash("notice", "Sorry, the process failed.")
+      res.status(501).render("./inventory/add-inventory", {
+        title: "Add to Inventory",
+        nav,
+        classificationList,
+        errors: null,
+      })
+    }
 }
 module.exports = invCont
