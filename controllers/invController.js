@@ -29,4 +29,13 @@ invCont.buildByInventoryId = async function(req, res, next) {
         grid,
     })
 }
+invCont.buildInvManagement = async function (req, res, next) {
+    let nav = await utilities.getNav()
+    const grid = await utilities.buildManagementGrid()
+    res.render('./inventory/management', {
+        title: "Inventory Management",
+        nav,
+        grid,
+    })
+}
 module.exports = invCont

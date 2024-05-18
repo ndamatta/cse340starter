@@ -63,6 +63,10 @@ Util.buildDetailGrid = async function(data) {
   `
   return grid
 }
+Util.buildManagementGrid = async function(data) {
+  let grid = "<h2>This is an H2</h2>"
+  return grid
+}
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 
