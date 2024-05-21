@@ -367,13 +367,13 @@ footer {
 }
 #manag-display a:hover {color: yellow;}
 
-/* ---------- ADD CLASSIFICATION / ADD VEHICLE ---------- */
-#add-classification-title, #add-inventory-title {
+/* ---------- ADD CLASSIFICATION / ADD VEHICLE / EDIT VEHICLE ---------- */
+#add-classification-title, #add-inventory-title, #edit-inventory-title {
   font-size: 1.5rem;
   margin-top: 3rem;
   text-align: center;
 }
-#add-classification-display, #add-inventory-display {
+#add-classification-display, #add-inventory-display, #edit-inventory-display {
   background-color: #fff;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   padding: 1.5rem 1rem;
@@ -381,18 +381,18 @@ footer {
   width: 85%;
   margin: 0 auto;
 }
-#add-classification-display input, #add-inventory-display input, #add-inventory-display select {
+#add-classification-display input, #add-inventory-display input, #add-inventory-display select, #edit-inventory-display select ,#edit-inventory-display input {
   width: 100%;
   padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: .6rem;
 }
-#add-classification-display form .add-classification-label, #add-inventory-display form .add-inventory-label {
+#add-classification-display form .add-classification-label, #add-inventory-display form .add-inventory-label, #edit-inventory-display form .edit-inventory-label {
   font-size: .9rem;
   margin-left: .2rem;
 }
-#add-classification-display button, #add-inventory-display button {
+#add-classification-display button, #add-inventory-display button, #edit-inventory-display button {
   width: 100%;
   padding: .6rem;
   background-color: #212529;
@@ -402,7 +402,7 @@ footer {
   cursor: pointer;
   margin-top: .6rem;
 }
-#add-classification-display button:hover, #add-inventory-display button:hover {
+#add-classification-display button:hover, #add-inventory-display button:hover, #edit-inventory-display button:hover {
   color: yellow;
   border-bottom: 1px solid yellow;
   border-radius: 5px;
@@ -508,7 +508,7 @@ ul.notice, ul.success {
     width: 350px;
   }
   /* ---------- INV MANAGEMENT ---------- */
-  #manag-display, #add-classification-display, #add-inventory-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display {
     width: 350px;
   }
   /* ---------- MESSAGES --------- */
@@ -527,7 +527,7 @@ ul.notice, ul.success {
   #login-display, #register-display {
     width: 450px;
   }
-  #manag-display, #add-classification-display, #add-inventory-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display {
     width: 450px;
   }
   ul.notice, ul.success {
