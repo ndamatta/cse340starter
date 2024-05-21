@@ -9,6 +9,7 @@ const utilities = require('./utilities/')
 const session = require("express-session")
 const pool = require("./database/")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 const static = require("./routes/static")
 const inventoryRoute = require("./routes/inventoryRoute")
@@ -26,6 +27,7 @@ app.use(session({
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
 //Express msgs middleware
 app.use(require('connect-flash')())
 app.use(function(req, res, next){
@@ -34,6 +36,8 @@ app.use(function(req, res, next){
 })
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
 
 //Routes
 app.use(static)
