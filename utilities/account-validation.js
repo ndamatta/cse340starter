@@ -55,13 +55,8 @@ const utilities = require(".")
       .trim()
       .isEmail()
       .normalizeEmail() // refer to validator.js docs
-      .withMessage("A valid email is required.")
-      .custom(async (account_email) => {
-        const emailExists = await accountModel.checkExistingEmail(account_email)
-        if (emailExists){
-          throw new Error("Email exists. Please log in or use different email")
-        }
-      }),
+      .withMessage("A valid email is required."),
+      
       body("account_password")
         .trim()
         .notEmpty()
