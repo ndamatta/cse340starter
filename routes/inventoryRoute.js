@@ -27,6 +27,9 @@ router.get('/type/:classificationId', utilities.handleErrors(invController.build
 router.get('/detail/:inventoryId', utilities.handleErrors(invController.buildByInventoryId));
 router.get('/getInventory/:classification_id', utilities.handleErrors(invController.getInventoryJSON))
 router.get('/edit/:inventoryId', utilities.handleErrors(invController.buildEditInventory))
-
+router.post('/update/',
+ inventoryValidate.inventoryRules(),
+ inventoryValidate.checkUpdateData,
+ utilities.handleErrors(invController.updateInventory))
 
 module.exports = router;
