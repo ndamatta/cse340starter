@@ -101,7 +101,6 @@ validate.checkUpdateData = async (req, res, next) => {
   let errors = []
   errors = validationResult(req)
   if (!errors.isEmpty()) {
-    console.log(errors)
     let nav = await utilities.getNav()
     let classificationList = await utilities.buildClassificationList()
     const itemName = `${itemData.inv_make} ${itemData.inv_model}`
