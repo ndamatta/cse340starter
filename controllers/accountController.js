@@ -101,4 +101,12 @@ res.render("./account/account", {
     errors: null,
 });
 }
+accountController.buildUpdate = async function (req, res) {
+  let nav = await utilities.getNav();
+  res.render("./account/update", {
+      title: "Update Account",
+      nav,
+      errors: null,
+  });
+  }
 module.exports = accountController

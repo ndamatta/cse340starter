@@ -423,6 +423,11 @@ footer {
 #inventoryDisplay tr:nth-child(even) {background-color: #f2f2f2;}
 #inventoryDisplay tr:hover {background-color: #dddddd;}
 /* ---------- ACCOUNT ---------- */
+#update-title {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+}
 #account-display {
   text-align: center;
   justify-content: center;
@@ -430,6 +435,57 @@ footer {
   width: 85%;
   margin: 3rem auto;
   padding: 1rem 0;
+}
+#update-display input {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: .6rem;
+}
+#update-display {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+  width: 85%;
+  margin: 0 auto;
+}
+#update-display button {
+  width: 100%;
+  padding: .6rem;
+  background-color: #212529;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: .6rem;
+}
+#update-display form fieldset .update-label {
+  font-size: .9rem;
+  margin-left: .2rem;
+  text-align: left;
+}
+#update-display form {
+  margin: 1rem 0;
+  text-align: left;
+}
+#update-display form legend {
+  border-left: 2px solid #212529;
+  border-right: 2px solid #212529;
+  border-radius: 10px;
+  padding: 0 .5rem;
+  text-align: center;
+}
+#update-display form fieldset {
+  border-radius: 10px;
+}
+#update-display #register-password {
+  margin-bottom: 0;
 }
 #account-display h2:first-child {
   border-left: 7px solid green;

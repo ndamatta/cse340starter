@@ -23,6 +23,7 @@ router.post(
 router.get("/",
  utilities.checkLogin,
  utilities.handleErrors(controller.buildAccount))
+ router.get("/update", utilities.handleErrors(controller.buildUpdate))
 
 
 module.exports = router;

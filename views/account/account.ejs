@@ -17,10 +17,10 @@
   <% const account_type = locals.accountData.account_type; %>
   <% if (account_type === 'Client') { %>
       <h2>Welcome, <%= locals.accountData.account_firstname %>!</h2>
-      <a href="#">Edit account info</a>
+      <a href="/account/update">Edit account info</a>
   <% } else if (account_type === 'Admin' || account_type === 'Employee') { %>
       <h2>Welcome, <%= locals.accountData.account_firstname %>!</h2>
       <a href="/inv">Inventory Management</a>
-      <a href="#">Edit account info</a>
+      <a href="/account/update">Edit account info</a>
   <% } %>
 </div>
