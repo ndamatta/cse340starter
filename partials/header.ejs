@@ -4,7 +4,8 @@
     </span>
     <div id="tools">
         <% if (locals.loggedin == 1) { %>
-            <div>
+            <div id='header-greeting'>
+                <p>Welcome <%- locals.accountData.account_firstname %></p>
                 <a href="/account/" title="See profile details" class="account-links">Profile</a>
                 <a href="/account/logout" title="Click to log out" class="account-links">Logout</a>
             </div>

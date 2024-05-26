@@ -7,7 +7,11 @@ const inventoryValidate = require("../utilities/inventory-validation")
 
 
 //Routes
-router.get('/', utilities.handleErrors(invController.buildInvManagement));
+router.get('/',
+ utilities.checkJWTToken,
+ utilities.checkLogin,
+ utilities.checkInventoryAccess,   
+ utilities.handleErrors(invController.buildInvManagement));
 router.get('/add-classification', utilities.handleErrors(invController.buildAddClassification));
 router.post('/add-classification',
  inventoryValidate.classificationRules(),

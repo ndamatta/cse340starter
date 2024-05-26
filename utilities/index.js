@@ -107,9 +107,19 @@ Util.checkJWTToken = (req, res, next) => {
  Util.checkLogin = (req, res, next) => {
   if (res.locals.loggedin) {
     next()
-  } else {
+  } else {  
     req.flash("notice", "Please log in.")
     return res.redirect("/account/login")
+  }
+ }
+ Util.checkInventoryAccess = (req, res, next) => {
+  const account_type = res.locals.accountData.account_type
+   if (account_type === 'Employee' || account_type === 'Admin') {
+    req.flash("success", "Access granted");
+    next();
+  } else {
+    req.flash("notice", "Access denied");
+    return res.redirect("/account/login");
   }
  }
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)

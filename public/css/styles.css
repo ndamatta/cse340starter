@@ -24,7 +24,7 @@
   background-color: #212529;
   border: 1px solid yellow;
   color: #F8F9FA;
-  padding: .1rem .5rem;
+  padding: .2rem .5rem;
   border-radius: 10px;
   transition: transform .2s;
 }
@@ -422,6 +422,30 @@ footer {
 #inventoryDisplay th {background-color: #f2f2f2;}
 #inventoryDisplay tr:nth-child(even) {background-color: #f2f2f2;}
 #inventoryDisplay tr:hover {background-color: #dddddd;}
+/* ---------- ACCOUNT ---------- */
+#account-display {
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  margin: 3rem auto;
+  padding: 1rem 0;
+}
+#account-display h2:first-child {
+  border-left: 7px solid green;
+  border-right: 7px solid green;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+#account-display a {
+  background-color: #212529;
+  color: #F8F9FA;
+  padding: .2rem .5rem;
+  border-radius: 10px;
+  transition: transform .2s;
+  text-decoration: none;
+}
+#account-display a:hover {color: yellow;}
 /* ---------- ERROR ---------- */
 #error-title, #error-msg {
   margin-top: 3rem;
@@ -508,7 +532,7 @@ ul.notice, ul.success {
     width: 350px;
   }
   /* ---------- INV MANAGEMENT ---------- */
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display {
     width: 350px;
   }
   /* ---------- MESSAGES --------- */
@@ -527,7 +551,7 @@ ul.notice, ul.success {
   #login-display, #register-display {
     width: 450px;
   }
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display {
     width: 450px;
   }
   ul.notice, ul.success {
