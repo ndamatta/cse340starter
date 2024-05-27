@@ -429,6 +429,8 @@ footer {
   text-align: center;
 }
 #account-display {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
@@ -500,6 +502,9 @@ footer {
   border-radius: 10px;
   transition: transform .2s;
   text-decoration: none;
+  width: 50%;
+  justify-content: center;
+  margin: .3rem auto;
 }
 #account-display a:hover {color: yellow;}
 /* ---------- ERROR ---------- */
