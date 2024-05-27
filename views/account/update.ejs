@@ -13,7 +13,7 @@
  </ul>
 <% } %>
 <div id="update-display">
-  <form action="/account/register" method="post">
+  <form action="/account/update-account-info" method="post">
     <fieldset>
         <legend>Basic information</legend>
         <label class="update-label">First name
@@ -29,13 +29,13 @@
         </label>
 
         <input type="hidden" name="account_id"
-        <% if(locals.account_id) { %> value="<%= locals.account_id %>"
+        <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
         <% } %>>
         <button type="submit">Update information</button>
     </fieldset>
   </form>
 
-  <form action="#">
+  <form action="/account/update-account-password" method="post">
     <fieldset>
         <legend>Password</legend>
         <label class="update-label">Password
@@ -44,7 +44,8 @@
         </label>
         <span id="show-password">Show password</span>
         <button type="submit">Update password</button>
-        <% if(locals.account_id) { %> value="<%= locals.account_id %>"
+        <input type="hidden" name="account_id"
+        <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
         <% } %>>
     </fieldset>
   </form>

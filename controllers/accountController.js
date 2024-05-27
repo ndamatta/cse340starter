@@ -109,4 +109,72 @@ accountController.buildUpdate = async function (req, res) {
       errors: null,
   });
   }
+accountController.updateAccount = async function (req, res) {
+  let nav = await utilities.getNav();
+  const { account_id, account_firstname, account_lastname, account_email} = req.body
+  const updateResult = await accountModel.updateAccount(account_id, account_firstname, account_lastname, account_email)
+  
+  if (!updateResult) {
+    req.flash("notice", "We couldn't update the account information.")
+    res.status(400).render("account/update", {
+    title: "Update Account",
+    nav,
+    errors: null,
+    account_firstname,
+    account_lastname,
+    account_email,
+    })
+    return
+  }
+  // update locals with updated info
+  const updatedInfo = await accountModel.getAccountById(account_id)
+  res.locals.accountData.account_firstname = updatedInfo.account_firstname
+  res.locals.accountData.account_lastname = updatedInfo.account_lastname
+  res.locals.accountData.account_email = updatedInfo.account_email
+
+  req.flash("success", "Your account information has been updated.")
+  res.render("./account/update", {
+      title: "Update Account",
+      nav,
+      errors: null,
+  });
+}
+accountController.updatePassword = async function (req, res) {
+  let nav = await utilities.getNav();
+  const { account_id, account_password} = req.body
+  let hashedPassword
+  try {
+    // regular password and cost (salt is generated automatically)
+    hashedPassword = await bcrypt.hashSync(account_password, 10)
+  } catch (error) {
+    req.flash("notice", "We couldn't update the account password.")
+    res.status(500).render("account/update", {
+      title: "Update Account",
+      nav,
+      errors: null,
+    })
+  }
+  console.log(account_id, hashedPassword)
+  const updateResult = await accountModel.updatePassword(account_id, hashedPassword)
+  
+  if (!updateResult) {
+    req.flash("notice", "We couldn't update the account password.")
+    res.status(400).render("account/update", {
+    title: "Update Account",
+    nav,
+    errors: null,
+    })
+    return
+  }
+  req.flash("success", "Your password has been updated.")
+  res.render("./account/update", {
+      title: "Update Account",
+      nav,
+      errors: null,
+  });
+  }
+  accountController.accountLogout = async function (req, res) {
+    res.clearCookie('jwt'); 
+    res.redirect('/'); 
+};
 module.exports = accountController

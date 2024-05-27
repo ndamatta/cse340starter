@@ -588,7 +588,7 @@ ul.notice, ul.success {
     width: 350px;
   }
   /* ---------- INV MANAGEMENT ---------- */
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display {
     width: 350px;
   }
   /* ---------- MESSAGES --------- */
@@ -607,7 +607,7 @@ ul.notice, ul.success {
   #login-display, #register-display {
     width: 450px;
   }
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display {
     width: 450px;
   }
   ul.notice, ul.success {
