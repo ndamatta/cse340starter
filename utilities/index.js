@@ -132,7 +132,12 @@ Util.checkJWTToken = (req, res, next) => {
   // Set up the table labels 
   let dataTable = `
     <thead>
-      <tr><th>Full Name</th><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
     </thead>
     <tbody>
   `;
@@ -142,6 +147,7 @@ Util.checkJWTToken = (req, res, next) => {
     dataTable += `
       <tr>
         <td>${account.account_firstname} ${account.account_lastname}</td>
+        <td>${account.account_email}</td>
         <td><a href='/inv/edit/#' title='Click to update'>Modify</a></td>
         <td><a href='/inv/delete/#' title='Click to delete'>Delete</a></td>
       </tr>
