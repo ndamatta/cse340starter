@@ -122,6 +122,35 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login");
   }
  }
+ Util.buildAccountList = async function (data) { 
+  // Check if data is an array
+  if (!Array.isArray(data)) {
+    console.error("Expected data to be an array, but received:", data);
+    return '';
+  }
+  
+  // Set up the table labels 
+  let dataTable = `
+    <thead>
+      <tr><th>Full Name</th><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </thead>
+    <tbody>
+  `;
+  
+  // Iterate over all accounts in the array and put each in a row 
+  data.forEach(function (account) { 
+    dataTable += `
+      <tr>
+        <td>${account.account_firstname} ${account.account_lastname}</td>
+        <td><a href='/inv/edit/#' title='Click to update'>Modify</a></td>
+        <td><a href='/inv/delete/#' title='Click to delete'>Delete</a></td>
+      </tr>
+    `; 
+  });
+
+  dataTable += '</tbody>'; 
+  return dataTable;
+}
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 

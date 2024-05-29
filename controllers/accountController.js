@@ -173,6 +173,26 @@ accountController.updatePassword = async function (req, res) {
       errors: null,
   });
   }
+  accountController.buildAccountManagement = async function (req, res, next) {
+    let nav = await utilities.getNav();
+    const resultData = await accountModel.getAllAccounts()
+
+    if (!resultData) {
+      req.flash("notice", "We couldn't show the account management.")
+      res.render("./account/management", {
+        title: "Account Management",
+        nav,
+        errors: null,
+    });
+    }
+    const accountList = await utilities.buildAccountList(resultData)
+    res.render("./account/management", {
+        title: "Account Management",
+        nav,
+        errors: null,
+        accountList,
+    });
+}
   accountController.accountLogout = async function (req, res) {
     res.clearCookie('jwt'); 
     res.redirect('/'); 

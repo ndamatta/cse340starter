@@ -58,4 +58,12 @@ async function updatePassword( account_id, hashedPassword) {
     console.error("Update Account Error:", error);
   }
 }
-module.exports = { registerAccount, checkExistingEmail, getAccountByEmail, getAccountById, updateAccount, updatePassword };
+async function getAllAccounts () {
+  try {
+    const result = await pool.query('SELECT account_id, account_firstname, account_lastname, account_email FROM public.account');
+    return result.rows; // Extract the rows from the query result
+  } catch (error) {
+    throw new Error("Error retrieving accounts");
+  }
+}
+module.exports = { registerAccount, checkExistingEmail, getAccountByEmail, getAccountById, updateAccount, updatePassword, getAllAccounts };
