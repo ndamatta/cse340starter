@@ -34,7 +34,11 @@ router.post("/update-account-password",
   accountValidate.checkPasswordData,
   utilities.handleErrors(controller.updatePassword)
 )
-router.get("/management", utilities.handleErrors(controller.buildAccountManagement))
+router.get("/management",
+utilities.checkJWTToken,
+ utilities.checkLogin,
+ utilities.checkAccountAccess,
+ utilities.handleErrors(controller.buildAccountManagement))
 router.get("/logout", utilities.handleErrors(controller.accountLogout))
 
 module.exports = router;

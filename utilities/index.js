@@ -112,7 +112,7 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
- Util.checkInventoryAccess = (req, res, next) => {
+ Util.checkAccountAccess = (req, res, next) => {
   const account_type = res.locals.accountData.account_type
    if (account_type === 'Employee' || account_type === 'Admin') {
     req.flash("success", "Access granted");

@@ -502,7 +502,7 @@ footer {
 #account-display a, #accountTable a {
   background-color: #212529;
   color: #F8F9FA;
-  padding: .2rem .5rem;
+  padding: .2rem 0rem;
   border-radius: 10px;
   transition: transform .2s;
   text-decoration: none;

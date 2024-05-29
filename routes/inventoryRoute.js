@@ -10,7 +10,7 @@ const inventoryValidate = require("../utilities/inventory-validation")
 router.get('/',
  utilities.checkJWTToken,
  utilities.checkLogin,
- utilities.checkInventoryAccess,   
+ utilities.checkAccountAccess,   
  utilities.handleErrors(invController.buildInvManagement));
 router.get('/add-classification', utilities.handleErrors(invController.buildAddClassification));
 router.post('/add-classification',
