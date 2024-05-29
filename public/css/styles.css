@@ -24,7 +24,7 @@
   background-color: #212529;
   border: 1px solid yellow;
   color: #F8F9FA;
-  padding: .2rem .5rem;
+  padding: .2rem .2rem;
   border-radius: 10px;
   transition: transform .2s;
 }
@@ -407,23 +407,27 @@ footer {
   border-bottom: 1px solid yellow;
   border-radius: 5px;
 }
-/* Table */
-#inventoryDisplay {
+/* Tables */
+#inventoryDisplay, #accountTable {
   border-collapse: collapse;
   width: 95%;
   justify-content: center;
   margin: 1rem auto;
 }
-#inventoryDisplay th, #inventoryDisplay td {
+#inventoryDisplay th, #inventoryDisplay td, #accountTable th, #accountTable td {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 6px;
 }
-#inventoryDisplay th {background-color: #f2f2f2;}
-#inventoryDisplay tr:nth-child(even) {background-color: #f2f2f2;}
-#inventoryDisplay tr:hover {background-color: #dddddd;}
+#inventoryDisplay th, #accountTable th {background-color: #f2f2f2;}
+#inventoryDisplay tr:nth-child(even), #accountTable tr:nth-child(even) {background-color: #f2f2f2;}
+#inventoryDisplay tr:hover, #accountTable tr:hover {background-color: #dddddd;}
+#accountTable .email {
+  overflow-wrap: break-all;
+  word-wrap: break-all;
+}
 /* ---------- ACCOUNT ---------- */
-#update-title {
+#update-title, #account-manag-title {
   font-size: 1.5rem;
   margin-top: 3rem;
   text-align: center;
@@ -495,7 +499,7 @@ footer {
   border-radius: 2px;
   margin-bottom: 1rem;
 }
-#account-display a {
+#account-display a, #accountTable a {
   background-color: #212529;
   color: #F8F9FA;
   padding: .2rem .5rem;
@@ -506,7 +510,7 @@ footer {
   justify-content: center;
   margin: .3rem auto;
 }
-#account-display a:hover {color: yellow;}
+#account-display a:hover, #accountTable a:hover {color: yellow;}
 /* ---------- ERROR ---------- */
 #error-title, #error-msg {
   margin-top: 3rem;
@@ -596,6 +600,7 @@ ul.notice, ul.success {
   #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display {
     width: 350px;
   }
+  #accountTable {width: 450px;}
   /* ---------- MESSAGES --------- */
   ul.notice, ul.sucess {
     width: 350px;
@@ -614,6 +619,9 @@ ul.notice, ul.success {
   }
   #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display {
     width: 450px;
+  }
+  #accountTable{
+    width: 650px;
   }
   ul.notice, ul.success {
     width: 450px;
