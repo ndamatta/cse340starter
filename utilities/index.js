@@ -148,8 +148,8 @@ Util.checkJWTToken = (req, res, next) => {
       <tr>
         <td>${account.account_firstname} ${account.account_lastname}</td>
         <td>${account.account_email}</td>
-        <td><a href='/inv/edit/#' title='Click to update'>Modify</a></td>
-        <td><a href='/inv/delete/#' title='Click to delete'>Delete</a></td>
+        <td><a href='/account/management/update/${account.account_id}' title='Click to edit'>Edit</a></td>
+        <td><a href='/account/management/delete/${account.account_id}' title='Click to delete'>Delete</a></td>
       </tr>
     `; 
   });

@@ -39,6 +39,7 @@ utilities.checkJWTToken,
  utilities.checkLogin,
  utilities.checkAccountAccess,
  utilities.handleErrors(controller.buildAccountManagement))
+ router.get('/management/update/:accountId', utilities.handleErrors(controller.buildEditAccount));
 router.get("/logout", utilities.handleErrors(controller.accountLogout))
 
 module.exports = router;

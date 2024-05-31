@@ -154,7 +154,7 @@ accountController.updatePassword = async function (req, res) {
       errors: null,
     })
   }
-  console.log(account_id, hashedPassword)
+  
   const updateResult = await accountModel.updatePassword(account_id, hashedPassword)
   
   if (!updateResult) {
@@ -172,29 +172,41 @@ accountController.updatePassword = async function (req, res) {
       nav,
       errors: null,
   });
-  }
-  accountController.buildAccountManagement = async function (req, res, next) {
-    let nav = await utilities.getNav();
-    const resultData = await accountModel.getAllAccounts()
-
-    if (!resultData) {
-      req.flash("notice", "We couldn't show the account management.")
-      res.render("./account/management", {
-        title: "Account Management",
-        nav,
-        errors: null,
-    });
-    }
-    const accountList = await utilities.buildAccountList(resultData)
-    res.render("./account/management", {
-        title: "Account Management",
-        nav,
-        errors: null,
-        accountList,
-    });
 }
-  accountController.accountLogout = async function (req, res) {
-    res.clearCookie('jwt'); 
-    res.redirect('/'); 
+accountController.buildAccountManagement = async function (req, res, next) {
+  let nav = await utilities.getNav();
+  const resultData = await accountModel.getAllAccounts()
+
+  if (!resultData) {
+    req.flash("notice", "We couldn't show the account management.")
+    res.render("./account/management", {
+      title: "Account Management",
+      nav,
+      errors: null,
+  });
+  }
+  const accountList = await utilities.buildAccountList(resultData)
+  res.render("./account/management", {
+      title: "Account Management",
+      nav,
+      errors: null,
+      accountList,
+  });
+}
+accountController.buildEditAccount = async function(req, res, next) {
+  let nav = await utilities.getNav()
+  const accountId = req.params.accountId
+  const data = await accountModel.getAccountById(accountId)
+
+  res.render('./account/update-account', {
+      title: `${data.account_firstname} ${data.account_lastname} ACCOUNT`,
+      nav,
+      errors: null,
+      data,
+  })
+}
+accountController.accountLogout = async function (req, res) {
+  res.clearCookie('jwt'); 
+  res.redirect('/'); 
 };
 module.exports = accountController
