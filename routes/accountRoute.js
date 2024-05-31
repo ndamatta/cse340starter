@@ -40,16 +40,18 @@ utilities.checkJWTToken,
  utilities.checkAccountAccess,
  utilities.handleErrors(controller.buildAccountManagement))
 router.get('/management/update/:accountId', utilities.handleErrors(controller.buildEditAccount));
-router.post("/management/update-account-info",
+router.post("/management/update-account",
 accountValidate.updateBasicInfoRules(),
 accountValidate.checkBasicInfoData,
 utilities.handleErrors(controller.updateAccount)
 )
 router.post("/management/update-account-password",
-  accountValidate.updatePasswordRules(),
-  accountValidate.checkPasswordData,
-  utilities.handleErrors(controller.updatePassword)
+ accountValidate.updatePasswordRules(),
+ accountValidate.checkPasswordData,
+ utilities.handleErrors(controller.updatePassword)
 )
+router.get('/management/delete/:accountId', utilities.handleErrors(controller.buildDeleteAccount));
+router.post('/management/delete-account', utilities.handleErrors(controller.deleteAccount));
 
 router.get("/logout", utilities.handleErrors(controller.accountLogout))
 

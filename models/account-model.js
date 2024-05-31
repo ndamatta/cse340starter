@@ -66,4 +66,14 @@ async function getAllAccounts () {
     throw new Error("Error retrieving accounts");
   }
 }
-module.exports = { registerAccount, checkExistingEmail, getAccountByEmail, getAccountById, updateAccount, updatePassword, getAllAccounts };
+async function deleteAccount(account_id) {
+  try {
+    const sql =
+      "DELETE FROM public.account WHERE account_id = $1"
+    const data = await pool.query(sql, [account_id])
+    return data
+  } catch (error) {
+    console.error("Delete Account Error: " + error)
+  }
+}
+module.exports = { registerAccount, checkExistingEmail, getAccountByEmail, getAccountById, updateAccount, updatePassword, getAllAccounts, deleteAccount };

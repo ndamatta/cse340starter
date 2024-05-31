@@ -205,6 +205,37 @@ accountController.buildEditAccount = async function(req, res, next) {
       data,
   })
 }
+accountController.buildDeleteAccount = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  const accountId = parseInt(req.params.accountId);
+  const data = await accountModel.getAccountById(accountId)
+  
+  res.render('./account/delete-account', {
+    title: `Management Delete Account`,
+    nav,
+    errors: null,
+    data,
+  })
+}
+accountController.deleteAccount = async function (req, res, next) {
+  const accountId = parseInt(req.body.account_id);
+  let nav = await utilities.getNav()
+  const data = await accountModel.getAccountById(accountId)
+  const deleteResult = await accountModel.deleteAccount(accountId)
+
+  if (deleteResult) {
+    req.flash("success", `The account was successfully deleted.`)
+    res.redirect("/account/")
+  } else {
+    req.flash("notice", "Sorry, the delete failed.")
+    res.status(501).render("./account/account", {
+    title: "Management Delete Account" ,
+    nav,
+    errors: null,
+    data,
+    })
+  }
+}
 accountController.accountLogout = async function (req, res) {
   res.clearCookie('jwt'); 
   res.redirect('/'); 
