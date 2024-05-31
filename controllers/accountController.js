@@ -199,7 +199,7 @@ accountController.buildEditAccount = async function(req, res, next) {
   const data = await accountModel.getAccountById(accountId)
 
   res.render('./account/update-account', {
-      title: `${data.account_firstname} ${data.account_lastname} ACCOUNT`,
+      title: `Management Update Information`,
       nav,
       errors: null,
       data,
