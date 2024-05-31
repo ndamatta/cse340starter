@@ -427,7 +427,7 @@ footer {
   word-wrap: break-all;
 }
 /* ---------- ACCOUNT / UPDATE (Personal) / UPDATE (Manag) ---------- */
-#update-title, #update-manag-title {
+#update-title, #update-manag-title, #delete-manag-title {
   font-size: 1.5rem;
   margin-top: 3rem;
   text-align: center;
@@ -442,14 +442,14 @@ footer {
   margin: 3rem auto;
   padding: 1rem 0;
 }
-#update-display input, #update-manag-display  input {
+#update-display input, #update-manag-display input, #delete-manag-display input {
   width: 100%;
   padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: .6rem;
 }
-#update-display, #update-manag-display  {
+#update-display, #update-manag-display, #delete-manag-display {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -461,7 +461,7 @@ footer {
   width: 85%;
   margin: 0 auto;
 }
-#update-display button, #update-manag-display button {
+#update-display button, #update-manag-display button, #delete-manag-display button {
   width: 100%;
   padding: .6rem;
   background-color: #212529;
@@ -471,12 +471,12 @@ footer {
   cursor: pointer;
   margin-top: .6rem;
 }
-#update-display form fieldset .update-label, #update-manag-display form fieldset {
+#update-display form fieldset .update-label, #update-manag-display form fieldset .update-label, #delete-manag-display .update-label {
   font-size: .9rem;
   margin-left: .2rem;
   text-align: left;
 }
-#update-display form, #update-manag-display form {
+#update-display form, #update-manag-display form, #delete-manag-display form {
   margin: 1rem 0;
   text-align: left;
 }
@@ -597,7 +597,7 @@ ul.notice, ul.success {
     width: 350px;
   }
   /* ---------- INV MANAGEMENT ---------- */
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display, #update-manag-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display, #update-manag-display, #delete-manag-display  {
     width: 350px;
   }
   #accountTable {width: 450px;}
@@ -617,7 +617,7 @@ ul.notice, ul.success {
   #login-display, #register-display {
     width: 450px;
   }
-  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display, #update-manag-display {
+  #manag-display, #add-classification-display, #add-inventory-display, #edit-inventory-display, #delete-inventory-display, #account-display, #update-display, #update-manag-display, #delete-manag-display  {
     width: 450px;
   }
   #accountTable{
