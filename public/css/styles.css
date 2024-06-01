@@ -422,10 +422,6 @@ footer {
 #inventoryDisplay th, #accountTable th {background-color: #f2f2f2;}
 #inventoryDisplay tr:nth-child(even), #accountTable tr:nth-child(even) {background-color: #f2f2f2;}
 #inventoryDisplay tr:hover, #accountTable tr:hover {background-color: #dddddd;}
-#accountTable .email {
-  overflow-wrap: break-all;
-  word-wrap: break-all;
-}
 /* ---------- ACCOUNT / UPDATE (Personal) / UPDATE (Manag) ---------- */
 #update-title, #update-manag-title, #account-manag-title, #delete-manag-title {
   font-size: 1.5rem;
