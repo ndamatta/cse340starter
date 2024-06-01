@@ -427,7 +427,7 @@ footer {
   word-wrap: break-all;
 }
 /* ---------- ACCOUNT / UPDATE (Personal) / UPDATE (Manag) ---------- */
-#update-title, #update-manag-title, #delete-manag-title {
+#update-title, #update-manag-title, #account-manag-title, #delete-manag-title {
   font-size: 1.5rem;
   margin-top: 3rem;
   text-align: center;
