@@ -122,6 +122,16 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login");
   }
  }
+ Util.checkAdminAccess = (req, res, next) => {
+  const account_type = res.locals.accountData.account_type
+   if (account_type === 'Admin') {
+    req.flash("success", "Access granted");
+    next();
+  } else {
+    req.flash("notice", "Access denied");
+    return res.redirect("/account/login");
+  }
+ }
  Util.buildAccountList = async function (data) { 
   // Check if data is an array
   if (!Array.isArray(data)) {

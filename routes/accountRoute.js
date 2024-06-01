@@ -37,12 +37,12 @@ router.post("/update-account-password",
 router.get("/management",
  utilities.checkJWTToken,
  utilities.checkLogin,
- utilities.checkAccountAccess,
+ utilities.checkAdminAccess,
  utilities.handleErrors(controller.buildAccountManagement))
 router.get('/management/update/:accountId',
  utilities.checkJWTToken,
  utilities.checkLogin,
- utilities.checkAccountAccess,
+ utilities.checkAdminAccess,
  utilities.handleErrors(controller.buildEditAccount)
  );
 router.post("/management/update-account",
@@ -58,7 +58,7 @@ router.post("/management/update-account-password",
 router.get('/management/delete/:accountId',
  utilities.checkJWTToken,
  utilities.checkLogin,
- utilities.checkAccountAccess, 
+ utilities.checkAdminAccess, 
  utilities.handleErrors(controller.buildDeleteAccount));
 router.post('/management/delete-account', utilities.handleErrors(controller.deleteAccount)
 );
